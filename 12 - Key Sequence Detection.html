@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Detection</title>
+</head>
+<body>
+<script>
+
+let code = [0,0,0,0,0,0];
+
+window.addEventListener("keyup", (e) => {
+    code.push(e.key);
+    code.splice(0,1);
+    console.log(code);
+    if (code[0] == '1' && code[1] == '3' && code[2] == '1' && code[3] == '7' && code[4] == '3' && code[5] == '7'){
+        console.log("Password ready");
+    };
+});
+
+// Otra solucion, donde puedo la pass (aunq el tamaño es de 6 caracteres)
+// let pass = "131737"
+// if (code.join('').includes(pass)) {
+//    console.log("Password ready");
+// };
+
+/* Sol vid
+const pressed = [];
+const secretCode = 'wesbos';
+
+window.addEventListener('keyup', (e) => {
+  console.log(e.key);
+  pressed.push(e.key);
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  if (pressed.join('').includes(secretCode)) {
+    console.log('DING DING!');
+  }
+  console.log(pressed);
+});
+*/
+
+
+</script>
+</body>
+</html>
